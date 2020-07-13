@@ -5,6 +5,6 @@ install:
  - pip install -r test_requirements.txt
  - pip install coveralls
 script:
- - pytest --cov=bitcoin tests/
+ - pytest --cov=sorting tests/
 after_success:
   - coveralls

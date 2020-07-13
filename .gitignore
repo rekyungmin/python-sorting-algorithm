@@ -17,7 +17,6 @@ __pycache__/
 venv/
 
 # tests
-tests/
 .coverage
 .tox
 .mypy_cache/

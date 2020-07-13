@@ -1,9 +1,15 @@
 # Sorting algorithm
 
 ## Bubble sort
+```python
+bubble_sort(data: List[T], *, reverse: bool = False, inplace: bool = False) -> List[T]
+bubble_sort_imp(data: List[T], *, reverse: bool = False, inplace: bool = False) -> List[T]
+```
+
 | Best | Average | Worst | Memory(~In place) | Stable | Method     |
 | ---- | ------- | ----- | ----------------- | ------ | ---------- |
-| $n$  | $n^2$   | $n^2$ | 1 (In-place)      | Yes    | Exchanging |
+| $`n`$  | $`n^2`$   | $`n^2`$ | 1 (In-place)      | Yes    | Exchanging |
+
 
 ```python
 >>> data = [1, 5, 3, 2, 1, 10, 8, 25, 22, 48, 7]
@@ -15,3 +21,12 @@
 >>> data
 [48, 25, 22, 10, 8, 7, 5, 3, 2, 1, 1]
 ```
+
+## Selection sort
+```python
+selection_sort(data: List[T], *, reverse: bool = False, inplace: bool = False) -> List[T]
+```
+
+| Best | Average | Worst | Memory(~In place) | Stable | Method     |
+| ---- | ------- | ----- | ----------------- | ------ | ---------- |
+| $`n^2`$  | $`n^2`$   | $`n^2`$ | 1 (In-place)      | **No**    | Insertion |

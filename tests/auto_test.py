@@ -1,8 +1,6 @@
-from typing import List, Tuple, TypeVar, Callable
+__all__ = ("auto",)
 
-__all__ = (
-    "auto",
-)
+from typing import List, Tuple, TypeVar, Callable
 
 T = TypeVar("T")
 
@@ -14,7 +12,7 @@ test_data: List[Tuple[T, T]] = [
     ([1, 2], [1, 2]),
     ([-5, 1, -7, 10], [-7, -5, 1, 10]),
     ([1, 5, 3, 2, 1, 10, 8, 25, 22, 48, 7], [1, 1, 2, 3, 5, 7, 8, 10, 22, 25, 48]),
-    ([0, 0, 0, 0, 0], [0, 0, 0, 0, 0])
+    ([0, 0, 0, 0, 0], [0, 0, 0, 0, 0]),
 ]
 
 

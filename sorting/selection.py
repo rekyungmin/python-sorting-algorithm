@@ -1,6 +1,6 @@
-from typing import List, TypeVar
-
 __all__ = ("selection_sort",)
+
+from typing import List, TypeVar
 
 T = TypeVar("T")
 

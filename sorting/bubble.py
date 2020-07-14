@@ -1,9 +1,9 @@
-from typing import List, TypeVar
-
 __all__ = (
     "bubble_sort",
     "bubble_sort_imp",
 )
+
+from typing import List, TypeVar
 
 T = TypeVar("T")
 

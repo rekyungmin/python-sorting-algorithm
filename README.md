@@ -32,7 +32,7 @@ bubble_sort_imp(data: List[T], *, reverse: bool = False, inplace: bool = False) 
 selection_sort(data: List[T], *, reverse: bool = False, inplace: bool = False) -> List[T]
 ```
 
-| Best | Average | Worst | Memory(~In place) | Stable | Method     |
+| Best | Average | Worst | Memory | Stable | Method     |
 | ---- | ------- | ----- | ----------------- | ------ | ---------- |
 | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620">  | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620">   | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620"> | 1 (In-place)      | **No**    | Selection |
 
@@ -41,6 +41,15 @@ selection_sort(data: List[T], *, reverse: bool = False, inplace: bool = False) -
 insertion_sort(data: List[T], *, reverse: bool = False, inplace: bool = False) -> List[T]
 ```
 
-| Best | Average | Worst | Memory(~In place) | Stable | Method     |
+| Best | Average | Worst | Memory | Stable | Method     |
 | ---- | ------- | ----- | ----------------- | ------ | ---------- |
 | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620">  | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620">   | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620"> | 1 (In-place)      | Yes    | Insertion |
+
+## Merge sort
+```python
+merge_sort(data: List[T], *, reverse: bool = False, inplace: bool = False) -> List[T]
+```
+
+| Best | Average | Worst | Memory | Stable | Method     |
+| ---- | ------- | ----- | ----------------- | ------ | ---------- |
+| <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/560dfdce0353a330e03e4b3e0b7ca6e484bb40fb">  | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/560dfdce0353a330e03e4b3e0b7ca6e484bb40fb">   | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/560dfdce0353a330e03e4b3e0b7ca6e484bb40fb"> | <i>n</i> (Not in-place)      | Yes    | Merging |

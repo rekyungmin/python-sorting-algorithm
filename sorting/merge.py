@@ -34,13 +34,12 @@ def _merge_sort(data: List[T], comparison: str) -> None:
             data[i] = right_part[right_i]
             right_i += 1
             if right_i == len(right_part):
-                data[i+1:] = left_part[left_i:]
+                data[i + 1 :] = left_part[left_i:]
                 break
         else:
             data[i] = left_part[left_i]
             left_i += 1
             if left_i == len(left_part):
-                data[i+1:] = right_part[right_i:]
+                data[i + 1 :] = right_part[right_i:]
                 break
         i += 1
-

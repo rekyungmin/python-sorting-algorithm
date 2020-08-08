@@ -2,6 +2,7 @@ from typing import List, Any, TypeVar, Callable
 import json
 
 import sorting
+from sorting.quick import middle_pivot, first_pivot, last_pivot
 
 T = TypeVar("T")
 
@@ -21,7 +22,18 @@ def auto(sort_cb: Callable, test_data) -> None:
             assert target != data[0]
 
 
-def test_all():
+def test_sorting_algorithms():
     test_data: List[List[Any]] = json.load(open("tests/input.json"))
     for sort_cb in sorting.__all__:
         auto(getattr(sorting, sort_cb), test_data)
+
+
+def test_pivot():
+    assert last_pivot(0, 0) == 0
+    assert last_pivot(0, 1) == 1
+    assert first_pivot(0, 0) == 0
+    assert first_pivot(0, 1) == 0
+    assert first_pivot(0, 10) == 0
+    assert middle_pivot(0, 0) == 0
+    assert middle_pivot(0, 5) == 2
+    assert middle_pivot(0, 6) == 3

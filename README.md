@@ -18,11 +18,14 @@ bubble_sort_imp(data: List[T], *, reverse: bool = False, inplace: bool = False) 
 
 ```python
 >>> data = [1, 5, 3, 2, 1, 10, 8, 25, 22, 48, 7]
->>> print(bubble_sort(data))
+>>> bubble_sort(data)
 [1, 1, 2, 3, 5, 7, 8, 10, 22, 25, 48]
->>> print(bubble_sort(data, reverse=True))
+>>> bubble_sort(data, reverse=True)
 [48, 25, 22, 10, 8, 7, 5, 3, 2, 1, 1]
+>>> data
+[1, 5, 3, 2, 1, 10, 8, 25, 22, 48, 7]
 >>> bubble_sort(data, reverse=True, inplace=True)
+[48, 25, 22, 10, 8, 7, 5, 3, 2, 1, 1]
 >>> data
 [48, 25, 22, 10, 8, 7, 5, 3, 2, 1, 1]
 ```
@@ -53,3 +56,38 @@ merge_sort(data: List[T], *, reverse: bool = False, inplace: bool = False) -> Li
 | Best | Average | Worst | Memory | Stable | Method     |
 | ---- | ------- | ----- | ----------------- | ------ | ---------- |
 | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/560dfdce0353a330e03e4b3e0b7ca6e484bb40fb">  | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/560dfdce0353a330e03e4b3e0b7ca6e484bb40fb">   | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/560dfdce0353a330e03e4b3e0b7ca6e484bb40fb"> | <i>n</i> (Not in-place)      | Yes    | Merging |
+
+## Quick sort
+```python
+def quick_sort(
+    data: List[T],
+    *,
+    reverse: bool = False,
+    inplace: bool = False,
+    pivot_cb: Callable[[int, int], int] = middle_pivot
+) -> List[T]:
+```
+
+pivot_cb: `first_pivot`, `middle_pivot`(default), `last_pivot`
+
+| Best | Average | Worst | Memory | Stable | Method     |
+| ---- | ------- | ----- | ----------------- | ------ | ---------- |
+| <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/560dfdce0353a330e03e4b3e0b7ca6e484bb40fb">  | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/560dfdce0353a330e03e4b3e0b7ca6e484bb40fb">   | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/560dfdce0353a330e03e4b3e0b7ca6e484bb40fb"> | <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/560dfdce0353a330e03e4b3e0b7ca6e484bb40fb"> (worst case: <i>n</i>) (in-place)      | Yes    | Merging |
+
+```python
+>>> data = [1, 5, 3, 2, 1, 10, 8, 25, 22, 48, 7]
+>>> quick_sort(data)
+[1, 1, 2, 3, 5, 7, 8, 10, 22, 25, 48]
+>>> quick_sort(data, pivot_cb=last_pivot)
+[1, 1, 2, 3, 5, 7, 8, 10, 22, 25, 48]
+>>> quick_sort(data, pivot_cb=first_pivot)
+[1, 1, 2, 3, 5, 7, 8, 10, 22, 25, 48]
+>>> quick_sort(data, reverse=True)
+[48, 25, 22, 10, 8, 7, 5, 3, 2, 1, 1]
+>>> data
+[1, 5, 3, 2, 1, 10, 8, 25, 22, 48, 7]
+>>> quick_sort(data, reverse=True, inplace=True)
+[48, 25, 22, 10, 8, 7, 5, 3, 2, 1, 1]
+>>> data
+[48, 25, 22, 10, 8, 7, 5, 3, 2, 1, 1]
+```
